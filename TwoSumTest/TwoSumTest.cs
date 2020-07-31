@@ -37,6 +37,16 @@ namespace TwoSumTest
             ShouldBeEqual(new[] {1, 2});
         }
 
+        [Test]
+        public void Test3()
+        {
+            GivenInput(new[] {3, 3}, 6);
+
+            GetTwoSum();
+
+            ShouldBeEqual(new[] {0, 1});
+        }
+
         private void ShouldBeEqual(int[] expected)
         {
             Assert.AreEqual(expected, _actual);
