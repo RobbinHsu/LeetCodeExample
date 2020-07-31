@@ -4,33 +4,53 @@ namespace TwoSumTest
 {
     public class TwoSumTest
     {
+        private int[] _actual;
+        private int[] _nums;
+        private int _target;
+        private TwoSum _twoSum;
+
+        [SetUp]
+        public void Setup()
+        {
+            _twoSum = new TwoSum();
+        }
+
+
         [Test]
         public void Test1()
         {
-            int[] nums = {2, 7, 11, 15};
-            var target = 9;
+            GivenInput(new[] {2, 7, 11, 15}, 9);
 
-            var twoSum = new TwoSum();
-            var sum = twoSum.GetResult(nums, target);
+            GetTwoSum();
 
-            int[] expected = {0, 1};
-
-            Assert.AreEqual(expected, sum);
+            ShouldBeEqual(new[] {0, 1});
         }
 
 
         [Test]
         public void Test2()
         {
-            int[] nums = {3, 2, 4};
-            var target = 6;
+            GivenInput(new[] {3, 2, 4}, 6);
 
-            var twoSum = new TwoSum();
-            var sum = twoSum.GetResult(nums, target);
+            GetTwoSum();
 
-            int[] expected = {1, 2};
+            ShouldBeEqual(new[] {1, 2});
+        }
 
-            Assert.AreEqual(expected, sum);
+        private void ShouldBeEqual(int[] expected)
+        {
+            Assert.AreEqual(expected, _actual);
+        }
+
+        private void GivenInput(int[] nums, int target)
+        {
+            _nums = nums;
+            _target = target;
+        }
+
+        private void GetTwoSum()
+        {
+            _actual = _twoSum.GetResult(_nums, _target);
         }
     }
 }
