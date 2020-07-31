@@ -8,42 +8,21 @@ namespace TwoSumTest
     {
         public int[] GetResult(int[] nums, int target)
         {
-            var list = new List<CandidateNumber>();
-            var result = new List<int>();
+            var result = new Dictionary<int, int>();
 
             for (var i = 0; i < nums.Length; i++)
             {
-                list.Add(new CandidateNumber(
-                    i,
-                    nums[i]
-                ));
-            }
-
-            for (var i = 0; i < list.Count(); i++)
-            {
-                for (var j = i + 1; j < list.Count(); j++)
+                for (int j = i + 1; j < nums.Length; j++)
                 {
-                    if (list[i].Number + list[j].Number == target)
+                    if (nums[i] + nums[j] == target)
                     {
-                        result.Add(list[i].Index);
-                        result.Add(list[j].Index);
+                        result.Add(i, nums[i]);
+                        result.Add(j, nums[j]);
                     }
                 }
             }
 
-            return result.ToArray();
-        }
-    }
-
-    public class CandidateNumber
-    {
-        public int Index { get; set; }
-        public int Number { get; set; }
-
-        public CandidateNumber(int index, int number)
-        {
-            Index = index;
-            Number = number;
+            return result.Keys.ToArray();
         }
     }
 }
