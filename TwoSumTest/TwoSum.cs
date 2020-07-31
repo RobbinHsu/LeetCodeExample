@@ -10,14 +10,14 @@ namespace TwoSumTest
         {
             var list = new List<int>();
 
-            for (int i = 0; i < nums.Length; i++)
+            for (var i = 0; i < nums.Length; i++)
             {
-                for (int j = 1; j < nums.Length; j++)
+                for (var j = i + 1; j < nums.Length; j++)
                 {
-                    if (nums[i]+nums[j]==target)
+                    if (nums[i] + nums[j] == target)
                     {
-                         list.Add( Array.IndexOf(nums, nums[i]));
-                         list.Add( Array.IndexOf(nums, nums[j]));
+                        list.Add(Array.IndexOf(nums, nums[i]));
+                        list.Add(Array.IndexOf(nums, nums[j]));
                     }
                 }
             }
@@ -35,7 +35,7 @@ namespace TwoSumTest
 
             //for (int i = 0; i < candidateNumbers.Count(); i++)
             //{
-                
+
             //}
 
             //var candidateNumber = int.MinValue;
@@ -46,7 +46,7 @@ namespace TwoSumTest
             //    candidateNumber = firstEnumerator.Current.Number;
             //    if (firstEnumerator.MoveNext())
             //    {
-                    
+
             //    }
             //}
 
