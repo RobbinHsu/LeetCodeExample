@@ -7,6 +7,7 @@ namespace ValidParentheses
     {
         public bool GetOutput(string s)
         {
+            var stack = new Stack<char>();
             var leftParentheses = new[] {'(', '{', '['};
             var rightParentheses = new[] {')', '}', ']'};
 
@@ -17,7 +18,6 @@ namespace ValidParentheses
                 {'}', '{'},
             };
 
-            var stack = new Stack<char>();
 
             foreach (var parentheses in s)
             {
@@ -37,7 +37,6 @@ namespace ValidParentheses
                     }
                 }
             }
-
 
             return stack.Count == 0;
         }
