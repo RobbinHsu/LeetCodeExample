@@ -19,17 +19,6 @@ namespace ValidParentheses
 
             var stack = new Stack<char>();
 
-            if (s.ToCharArray().Length == 1)
-            {
-                return false;
-            }
-
-            //var firstTop = s.ToCharArray().FirstOrDefault();
-            //if (rightParentheses.Contains(firstTop))
-            //{
-            //    return false;
-            //}
-
             foreach (var parentheses in s)
             {
                 if (leftParentheses.Contains(parentheses))
