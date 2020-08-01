@@ -24,11 +24,11 @@ namespace ValidParentheses
                 return false;
             }
 
-            var firstTop = s.ToCharArray().FirstOrDefault();
-            if (rightParentheses.Contains(firstTop))
-            {
-                return false;
-            }
+            //var firstTop = s.ToCharArray().FirstOrDefault();
+            //if (rightParentheses.Contains(firstTop))
+            //{
+            //    return false;
+            //}
 
             foreach (var parentheses in s)
             {
@@ -39,7 +39,9 @@ namespace ValidParentheses
 
                 if (rightParentheses.Contains(parentheses))
                 {
-                    var pop = stack.Pop();
+                    char pop;
+                    stack.TryPop(out pop);
+
                     if (!parenthesesMatch[parentheses].Equals(pop))
                     {
                         return false;
@@ -48,7 +50,7 @@ namespace ValidParentheses
             }
 
 
-            return true;
+            return stack.Count == 0;
         }
     }
 }

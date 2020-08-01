@@ -46,6 +46,26 @@ namespace ValidParentheses
             ShouldBe(false);
         }
 
+        [Test]
+        public void Test4()
+        {
+            GivenInput("((");
+
+            WhenValidParentheses();
+
+            ShouldBe(false);
+        }
+
+        [Test]
+        public void Test5()
+        {
+            GivenInput("[])");
+
+            WhenValidParentheses();
+
+            ShouldBe(false);
+        }
+
         private void ShouldBe(bool compareResult)
         {
             Assert.AreEqual(compareResult, _actual);
