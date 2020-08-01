@@ -19,6 +19,11 @@ namespace ValidParentheses
 
             var stack = new Stack<char>();
 
+            if (s.ToCharArray().Length == 1)
+            {
+                return false;
+            }
+
             var firstTop = s.ToCharArray().FirstOrDefault();
             if (rightParentheses.Contains(firstTop))
             {
