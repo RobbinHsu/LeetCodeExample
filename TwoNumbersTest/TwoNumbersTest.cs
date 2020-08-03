@@ -16,50 +16,14 @@ namespace TwoNumbersTest
         [Test]
         public void Test1()
         {
-            var firstInput = new ListNode()
-            {
-                val = 2,
-                next = new ListNode()
-                {
-                    val = 4,
-                    next = new ListNode()
-                    {
-                        val = 3,
-                        next = null
-                    }
-                }
-            };
+            var firstInput = new ListNode(2, new ListNode(4, new ListNode(3)));
 
-            var secondInput = new ListNode()
-            {
-                val = 5,
-                next = new ListNode()
-                {
-                    val = 6,
-                    next = new ListNode()
-                    {
-                        val = 4,
-                        next = null
-                    }
-                }
-            };
+            var secondInput = new ListNode(5, new ListNode(6, new ListNode(4)));
 
             var actual = _solution.AddTwoNumbers(firstInput, secondInput);
 
 
-            var expected = new ListNode()
-            {
-                val = 7,
-                next = new ListNode()
-                {
-                    val = 0,
-                    next = new ListNode()
-                    {
-                        val = 8,
-                        next = null
-                    }
-                }
-            };
+            var expected = new ListNode(7, new ListNode(0, new ListNode(8)));
 
             expected.ToExpectedObject().ShouldMatch(actual);
         }
