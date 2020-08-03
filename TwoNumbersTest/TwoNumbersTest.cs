@@ -27,5 +27,21 @@ namespace TwoNumbersTest
 
             expected.ToExpectedObject().ShouldMatch(actual);
         }
+
+
+        [Test]
+        public void Test2()
+        {
+            var firstInput = new ListNode(5);
+
+            var secondInput = new ListNode(5);
+
+            var actual = _solution.AddTwoNumbers(firstInput, secondInput);
+
+
+            var expected = new ListNode(0, new ListNode(1));
+
+            expected.ToExpectedObject().ShouldMatch(actual);
+        }
     }
 }

@@ -32,9 +32,9 @@ namespace TwoNumbersTest
             }
 
             //兩列node都到底，但是還有進位
-            if (sum > 10 && resultNode.next == null)
+            if (sum >= 10 && resultNode.next == null)
             {
-                resultNode = new ListNode(1);
+                resultNode.next = new ListNode(1);
             }
 
             return resultNode;
