@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoSumTest", "TwoSumTest\Tw
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidParentheses", "ValidParentheses\ValidParentheses.csproj", "{610788C0-6065-4FAA-9D6D-AECA15871F67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoNumbersTest", "TwoNumbersTest\TwoNumbersTest.csproj", "{D6DFFC32-27CF-42A9-9436-161AF6E3756C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoNumbersTest", "TwoNumbersTest\TwoNumbersTest.csproj", "{D6DFFC32-27CF-42A9-9436-161AF6E3756C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE9CA9C8-FACE-4C4B-8581-11973BEF76E6}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
