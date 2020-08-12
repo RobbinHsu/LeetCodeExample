@@ -8,28 +8,19 @@ namespace LongestSubstringWithoutRepeatingCharacters
     {
         public int LengthOfLongestSubstring(string s)
         {
-            var characters = new StringBuilder();
-            var maxString = string.Empty;
+            if (string.IsNullOrEmpty(s))
+            {
+                return 0;
+            }
+
+            var characters = new HashSet<char>();
 
             foreach (var character in s)
             {
-                if (characters.ToString().Contains(character))
-                {
-                    if (characters.Length>maxString.Length)
-                    {
-                        maxString = characters.ToString();
-                    }
-
-                    characters.Clear();
-                    characters.Append(character);
-                }
-                else
-                {
-                    characters.Append(character);
-                }
+                characters.Add(character);
             }
 
-            return maxString.Length;
+            return characters.Count;
         }
     }
 }

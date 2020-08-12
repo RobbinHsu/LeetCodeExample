@@ -21,5 +21,47 @@ namespace LongestSubstringWithoutRepeatingCharacters
 
             Assert.AreEqual(3, actual);
         }
+
+        [Test]
+        public void Test2()
+        {
+            var input = " ";
+
+            var actual = _solution.LengthOfLongestSubstring(input);
+
+            Assert.AreEqual(1, actual);
+        }
+
+        [Test]
+        public void Test3()
+        {
+            var input = "";
+
+            var actual = _solution.LengthOfLongestSubstring(input);
+
+            Assert.AreEqual(0, actual);
+        }
+
+        [Test]
+        public void Test4()
+        {
+            var input = "au";
+
+            var actual = _solution.LengthOfLongestSubstring(input);
+
+            Assert.AreEqual(2, actual);
+        }
+
+
+        [Test]
+        public void Test5()
+        {
+            var input = "dvdf";
+
+            var actual = _solution.LengthOfLongestSubstring(input);
+
+            Assert.AreEqual(3, actual);
+        }
+
     }
 }
