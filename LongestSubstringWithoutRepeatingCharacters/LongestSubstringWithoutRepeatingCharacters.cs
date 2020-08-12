@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace LongestSubstringWithoutRepeatingCharacters
 {
-    public class LongestSubstringWithoutRepeatingCharactersTest
+    public class LongestSubstringWithoutRepeatingCharacters
     {
         private Solution _solution;
 
