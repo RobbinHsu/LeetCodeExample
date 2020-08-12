@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,19 +9,30 @@ namespace LongestSubstringWithoutRepeatingCharacters
     {
         public int LengthOfLongestSubstring(string s)
         {
-            if (string.IsNullOrEmpty(s))
+            var charArray = s.ToCharArray();
+            var stringLength = 0;
+            var index = 0;
+            var longestWord = new Dictionary<char, int>();
+
+            while (index < charArray.Length)
             {
-                return 0;
+                var c = charArray[index];
+
+                if (longestWord.ContainsKey(c))
+                {
+                    stringLength = Math.Max(stringLength, longestWord.Count);
+                    index = longestWord[c];
+                    longestWord.Clear();
+                }
+                else
+                {
+                    longestWord.Add(c, index);
+                }
+
+                index++;
             }
 
-            var characters = new HashSet<char>();
-
-            foreach (var character in s)
-            {
-                characters.Add(character);
-            }
-
-            return characters.Count;
+            return Math.Max(stringLength, longestWord.Count);
         }
     }
 }
