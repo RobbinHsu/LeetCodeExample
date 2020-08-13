@@ -15,11 +15,26 @@ namespace LongestSubstringWithoutRepeatingCharacters
         [Test]
         public void Test1()
         {
-            var input = "abcabcbb";
+            ShouldBeEqual("abcabcbb", 3);
+        }
 
+        [Test]
+        public void Test3()
+        {
+            ShouldBeEqual("abcdcbb", 4);
+        }
+
+        [Test]
+        public void Test2()
+        {
+            ShouldBeEqual("pwwkew", 3);
+        }
+
+        private void ShouldBeEqual(string input, int expected)
+        {
             var actual = _solution.LengthOfLongestSubstring(input);
 
-            Assert.AreEqual(3, actual);
+            Assert.AreEqual(expected, actual);
         }
     }
 }
