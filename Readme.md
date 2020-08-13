@@ -1,4 +1,16 @@
-﻿ValidParentheses
+﻿Length Of Longest Substring
+---
+
+**基本做法**
+
+* 利用dictionary儲存目前字串  
+* 如果char已經出現過，和之前的字串長度做比較，儲存最大值
+* 索引起始點定位成這次char的位置，下次迴圈將char的下一個位置開始執行
+* 避免字串完全沒重複，回傳答案之前再比一次
+* 因為每一次遇到重複char，就要以那個char為起點重跑一次迴圈，所以效率低
+
+
+ValidParentheses
 ---
 
 * 遇到左括號就push  
