@@ -1,5 +1,12 @@
 ﻿Length Of Longest Substring
 ---
+**Sliding Window**
+1. 不同字元
+    * 加長window(右邊指標+1)
+    * 紀錄目前字串長度
+
+2. 相同字元
+    * 刪除左邊指標的字元，直到左右邊字元相同
 
 **基本做法**
 
